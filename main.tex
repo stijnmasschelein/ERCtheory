@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{natbib}
+\usepackage{amsmath}
 
 \title{Theory Should I Stay or Should I Go}
 \author{Stijn Masschelein}
@@ -12,23 +13,125 @@
 
 \section{Introduction}
 
-We model a two period game with buyer and sellers. The buyers offer a contract with price, $P_i$, and a potential control system in each period, $i$. We explain the control system later. The seller decides on how much effort $e_i$ to put in to the job after they accept the contract. The buyer's profit is given by $\pi_{Bi} = Se_i - P$ while the seller's profit is given by $\pi_{Si} = P - C e_i^2$ \footnote{This is not exactly what we did in the experiment but it is pretty close and in line with most simple models.}.
+We model a two period game with buyer and sellers. The buyers offer a contract with price, $P_i$, and a potential control system in each period, $i$. We explain the control system later. The seller decides on how much effort $e_i$ to put in to the job after they accept the contract. The buyer's profit is given by $\pi^B_{i} = Se_i - P$ while the seller's profit is given by $\pi^S_{i} = P - C e_i^2$ \footnote{This is not exactly what we did in the experiment but it is pretty close and in line with most simple models.}.
 
 The social preferences are based on the $\alpha$-model in \citep{Bolton2008a}. That is there are two types of sellers: fair sellers who minimize the difference between between the seller's profit and the buyer's profit and egocentric sellers who maximize their own profit. We assume that for each sellers there is probability $\alpha$ that the seller is fair and a probability $1-\alpha$ that the seller is egocentric. As a start, we assume that this proportion, $\alpha$, is common knowledge.
 
 The setting differs crucially from the setting in \citep{Choi2014}. In our setting, the buyer and the seller can decide to have a different contract in the second period after observing the first period behavior. In addition, when there are multiple sellers, the buyers can decide to switch to another seller in the second period. Vice versa, when there are multiple buyers, the sellers can decide to accept a contract with another buyer in the second period. In other words, our setting allows for competition to have another effect than purely a market price effect as in  \citep{Choi2014}. Our setting allows for competition in the form of \emph{switching behavior}.
 
-\section{Monopsony}
+\section{Summary of Theory}
 
-As a benchmark case, we assume that there is only buyer and one seller. In the last period, the fair seller will split the surplus equally between buyer and seller, and the egocentric seller will exert minimum effort.
+\begin{enumerate}
+    \item Pricing Trade-off for buyers
+    \begin{enumerate}
+        \item Higher price gets more effort from fair sellers
+        \item Higher price increases probability of defection
+    \end{enumerate}
+    \item Knowledge of belief of probability of fair sellers
+    \begin{enumerate}
+        \item Common knowledge: Price reflects belief without separation. 
+        \item Sellers are uncertain about buyer's belief: Low trust buyers can always pretend to be high trust buyers. If no very high trusting buyers, all buyers settle on the same price which only depends on the range of possible beliefs. If high trusting buyers, this could unravel and lead to signaling. \emph{This condition is a pain to derive}. The main idea is that signaling true trusting beliefs only works if the egocentric sellers defect.
+    \end{enumerate}
+\end{enumerate}
+    
+
+\section{No Competition}
 
 \subsection{No control}
 
+As a benchmark case, we assume that there is only buyer and one seller. In the last period, the fair seller will split the surplus equally between buyer and seller, and the egocentric seller will exert minimum effort. The response function for the fair seller is 
+
+$$
+e^*_i = \frac{\sqrt{8CP_i + S^2} - S}{2C}
+$$
+
+That is, as long as the buyers offer some positive price, the fair sellers will respond with some positive effort. Side note: The decreasing returns of offering a higher price is consistent with a lot of experiments.
+
+As a result, the buyers know what the effort of a fair seller will be in the last period ($e^*_2$) and what the effort of an egocentric seller will be (i.e. $0$). If the buyer does not know what type the seller is, they will offer 
+
+$$
+P^*_2 = max \Bigl( \frac{S^2 (4\alpha^2 - 1)}{8C}, 0 \Bigr )
+$$
+
+Which means that the probability of a fair seller needs to be $\alpha > .5$ to have a contract in the second period. This will be the condition we assume for the rest of the theory \footnote{The threshold is rather high and partly a result of the fair seller type and the other parameters. However, it is not out of the realm of typical experimental results. Another way of thinking about it is that a probability $\alpha$ of sellers cares about their reputation and others do not.}.
+
+If the egocentric sellers want to get a contract in the last period, they need to pretend to act fair in the first period. In that case, the buyers can offer a higher price in the first period than in the second period which is consistent with empirically observed end period effects. However, the buyer cannot offer too high a price because the egocentric sellers would have an incentive to defect in the first period. The condition can be written as:
+
+$$
+P^*_1 = min \Bigl ( \frac{3 S^2}{8C},
+           \frac{P_2}{2} + \frac{S}{2} \sqrt{\frac{P_2}{C}} \Bigr )
+$$
+
+The first option is the optimal price for buyer who knows that all sellers will act fair. The second option represents the condition that that the first period price cannot be too high . The first option will be chosen when $\alpha > \sqrt{3/4}$. The key insight is that the egocentric sellers need to believe that the buyers will offer a high price in the last period. Interestingly, the buyers can reveal their willingness by offering a high period 1 price ($\alpha$ determines $P_2$ which determines $P_1$). Again, this is consistent with a lot of literature. 
+
+The buyer is never better off when offering a higher price in period 1 to separate the fair sellers from the egocentric sellers. Because $P_1 > P_2$, the losses from egocentric sellers defecting will be higher when they happen in period 1 than when they happen in period 2. (This is not the full story, it ignores the fair sellers).
+
+\subsection{Control}
+
+TODO. Assume a control system that forces the sellers to deliver $\underline{e}$. The difficulty is to decide what fair sellers will do when $e^*_i < \underline{e}$. 
+
 \section{Seller competition}
 
-Second, we assume there are two sellers and one buyer. This means that there is competition between the sellers. This gives the buyer the advantage that they know that even when the seller in period one acts unfair, they can still switch to the other seller.  
+Second, we assume there are two sellers and one buyer. This means that there is competition between the sellers. This gives the buyer the advantage that they know that even when the seller in period one acts unfair, they can still switch to the other seller and make some profit. However, that expected period 1 profit is relatively small especially for moderate $\alpha$ and it is never in the buyer's best interest to forego the cooperation of the egocentric sellers in the first period. 
+
+In other words, seller competition only has a limited impact and we should expect no buyers to switch in equilibrium with seller competition. The need for a high initial price to motivate the fair sellers, assures that buyers cannot use price competition to lower the price. 
+
+\subsection{Buyer competition}
+
+Buyer competition with two buyers and one seller is more complicated. 
+
+\subsubsection{Equal $\alpha$}
+
+Assume that a fair seller will accept an offer with a higher $P$ as long as $P < \frac{3S^2}{8C}$. This implies that sellers prefer more money over less money if they can achieve equal profits. Buyer competition implies that buyers will have to offer a higher price than in the no competition situation to have a contract accepted. However, the higher price will create incentives for the egocentric sellers to defect with no effort in the first period.
+
+It turns out that there are two possible outcomes depending on the trust ($\alpha$) of the sellers. If the probability of a fair seller is moderately high ($0.5 < \alpha < 0.669$), the probability of meeting a fair seller is not high enough to risk having a egocentric seller defect in period 1. In this case, the buyers will offer the same price as in the no competition condition. The seller will choose them with a probability of $1/2$ and respond fair in the first period. 
+
+The second option is that there is a high probability of a fair seller ($\alpha > 0.67$), and it's worthwhile for a buyer to risk having an egocentric seller giving no effort in the first period. The advantage of being able to fully cooperate with a fair seller in the second period, outweigh the potential loss with an egocentric seller. As a result, the buyer will be outbid each other to where the expected buyer profit is 0 \footnote{In Sharon's experiment, the average in buyer profit is 0 without control and with buyer competition.}.
+
+\subsubsection{Buyers are different type, $\alpha_H > \alpha_L$}
+
+We can interpret the $\alpha$'s as the private beliefs of the buyers. The belief is about the probability of meeting a fair seller in the assumption that the seller's belief the same \footnote{I think this is enough of a condition for revelation of true beliefs in the absence of }
+
+If the buyers honestly reveal their $\alpha$, $P(\alpha_H) > P(\alpha_L)$. This will be true when the buyers are keeping the price low enough to make sure that the egocentric seller will play fair. The assumption (which is correct in the experiment) is that the prices offered by the buyers are observable to the other buyers.
+
+\emph{$0.5 < \alpha_H < 0.669$}: All buyers will offer a low price in period 1 to give the egocentric sellers no incentive to defect. There is no incentive for the low trusting buyer to match the price of the high trusting seller because then the sellers do not know which type the sellers are and might split. 
+
+\emph{$0.67 < \alpha_L < \alpha_H$}: The high trusting buyer is willing to pay a higher price than the low trusting buyer. The high trusting buyer can offer a price slightly over the price where the low trusting buyer expects a zero profit.
+
+\emph{$\alpha_L < 0.67 < \alpha_H$}: It depends on the first. That is will the low trust buyers be able to follow. 
 
 
+\section{Appendix}
+
+Some conditions
+
+The expected value of second period profit when the seller only knows the range of uniform beliefs of the sellers.
+
+\begin{align*}
+\pi^S_2 &= \frac{S^2}{8C}(\frac{4}{3}(\alpha_H^2 + \alpha_L^2 + \alpha_H \alpha_L) - 1) \text{ if } \alpha_L > 0.5 \\
+&= \frac{S^2}{8C}(\frac{4}{3}(\alpha_H^2 + 0.5^2 + .5 \alpha_H) - 1) \frac{\alpha_H - 0.5}{\alpha_H - \alpha_L} \text{ if } \alpha_L < 0.5
+\end{align*}
+
+\begin{align*}
+\alpha_m^2 &= \frac{1}{3}(\alpha_H^2 + \alpha^2_L + \alpha_H \alpha_L) \text{ if } \alpha_L > 0.5 \\
+&= \frac{1}{3} ((\overline{\alpha} + \Delta)^2 + (\overline{\alpha} - \Delta)^2 + (\overline{\alpha} + \Delta) (\overline{\alpha} - \Delta) \\
+&= \frac{1}{3} ((\overline{\alpha} + \Delta)^2 + (\overline{\alpha} - \Delta)^2 + (\overline{\alpha} + \Delta) (\overline{\alpha} - \Delta) \\
+&= \overline{\alpha}^2 + \frac{\Delta^2}{3} \\
+\end{align*}
+
+This only works if $0.5 < \alpha_L < \alpha_H < \sqrt{3/4}$. 
+
+Maximum $P_1$ as a function of $\alpha_m$
+
+
+$$
+P_1 \leq \frac{S}{8C}
+    [(\sqrt{\frac{4 \alpha_m^2 - 1}{2}} + 1)^2 - 1]
+$$
+
+With buyer competition, the price will be forced towards $\alpha_m^2$ but the seller's will defect because they no longer belief this.
+
+Without buyer competition the buyer's will have to accommodate the uncertainty in the seller's belief by offering the same price. The bigger the uncertainty the higher the $\alpha_m$ and the higher the price in the first period. 
 
 \bibliographystyle{agsm}
 \bibliography{references.bib}
