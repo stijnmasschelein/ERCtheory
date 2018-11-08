@@ -22,18 +22,43 @@ The setting differs crucially from the setting in \citep{Choi2014}. In our setti
 \section{Summary of Theory}
 
 \begin{enumerate}
-    \item Pricing Trade-off for buyers
+    \item Pricing trade-off for buyers
     \begin{enumerate}
         \item Higher price gets more effort from fair sellers
         \item Higher price increases probability of defection
     \end{enumerate}
     \item Knowledge of belief of probability of fair sellers
     \begin{enumerate}
-        \item Common knowledge: Price reflects belief without separation. 
-        \item Sellers are uncertain about buyer's belief: Low trust buyers can always pretend to be high trust buyers. If no very high trusting buyers, all buyers settle on the same price which only depends on the range of possible beliefs. If high trusting buyers, this could unravel and lead to signaling. \emph{This condition is a pain to derive}. The main idea is that signaling true trusting beliefs only works if the egocentric sellers defect.
+        \item Common knowledge: Price reflects belief without separation of sellers. 
+        \item Sellers are uncertain about buyer's belief. The uncertainty is common knowledge.
+        \begin{itemize}
+            \item With low uncertainty: Low trust buyers can always pretend to be high trust buyers. If no very high trusting buyers, all buyers settle on the same price which only depends on the range of possible beliefs. 
+            \item With high uncertainty about buyer beliefs. High trusting buyers, this could unravel and lead to signaling. \emph{This condition is a pain to derive}. The main idea is that signaling true trusting beliefs only works if the egocentric sellers defect.
+        \end{itemize}
+    \end{enumerate}
+    \item Seller competition does not have a big effect. The pricing trade-off means that buyers cannot drop the price too much because they loose the effort from the fair sellers. Increasing the price in the first period to separate the sellers is not interesting because the advantage is not big enough.
+    \item Buyer competition drives up the price which increases the separation where buyers offer prices that give them just enough profit. The exception will be when there is not a lot of uncertainty about the trusting beliefs and trust is moderate.
+    \item A control system can destroy the effect of fair sellers.
+    \begin{enumerate}
+        \item In the last period, the buyer's strategy could be to treat everyone as egocentric by using control to it's maximum. The other option is to enforce everyone to be fair. However, if you can enforce a level $e$ costlessly, you can always do it better trough a contract. If the level $e$ is not costless, you have to compare the marginal cost of enforcement with the marginal benefit of offering a higher wage in the absence of enforcing control and risking to be scooped. 
+        \item In a seller competition market, whether to use enforcement depends on whether the buyer trusts that the seller they are dealing with is going to be fair but obviously the treshold is going to be higher than $0.5$ now. In a buyer competition market, the price is going to be put downwards so that the seller captures all of the surplus. However, this is not going to work with the fair sellers who will be happily accepting higher contracts. There could be some separation here.
     \end{enumerate}
 \end{enumerate}
-    
+
+
+\section{Summary in words}
+
+The model assumes that there are two types of sellers: (1) egocentric sellers who maximise their own profit and (2) fair sellers who minimise the difference in profits with their buyer. In the no control conditions, the buyers only decide on the price of the contract and the sellers decide how much effort to put into the task. 
+
+The model assumes two periods, so that the egocentric sellers can have an incentive to pretend to be fair and get a second contract. The basic tension for the buyers is that they want to offer a high price in the first period because fair sellers and egocentric sellers that pretend to be fair will respond with higher effort but they cannot offer a too high price because that gives the egocentric sellers an incentive to defect. Egocentric sellers have to make the trade-off between the profit of defecting in the first period and the profit in the second period.
+
+If the egocentric sellers are relatively sure about whether they are trusted by the buyers, in equilibrium buyers will offer a price in the first period so that every seller pretends to be fair and reciprocates. In the second period, the buyers offer a lower price which only the fair sellers reciprocate. The higher the buyer trust the higher the price in period 1 and period 2. 
+
+Seller competition (2 sellers - 1 buyer) does not have a large effect on this equilibrium. Competition would normally drive the prices down but buyers want to offer higher prices to show that they trust the sellers. The buyers can even run the risk of offering higher prices because even if the seller defects in period 1 they can offer another contract to another seller. However, that benefit is not big enough to change the equilibrium. In this equilibrium, all relationships are renewed.
+
+Buyer competition (2 buyers - 1 seller) is more complicated. The buyer competition will drive up the price especially when one buyer is very trusting. A trusting buyer believes that there are enough fair sellers so that it is worthwile to offer higher prices even when the price is too high for an egocentric seller and they defect. This does mean that not all relations are renewed.
+
+When control is possible, one could think it is possible to combine the control system to control the egocentric seller swith high prices for the fair sellers. However, you can always get the same effort by just relying on control without the higher profit. If there is a cost of control, it can be better to not rely on the control system at all. This is something we see in the data (See especially figure 4). I haven't been able to figure out whether it is actually a possible equilibrium in the experiment but at least some buyers tried it. I think whatever is an equilibrium in the buyer competition condition is also an equilibrium with seller competition. It's just that the seller captures most of the suplus with buyer competition and vice versa. In the data, we see that the profit distribution flips between buyers and sellers depending on competition with control (see Table 2). 
 
 \section{No Competition}
 
@@ -68,7 +93,26 @@ The buyer is never better off when offering a higher price in period 1 to separa
 
 \subsection{Control}
 
-TODO. Assume a control system that forces the sellers to deliver $\underline{e}$. The difficulty is to decide what fair sellers will do when $e^*_i < \underline{e}$. 
+TODO. Assume a control system that forces the sellers to deliver $\underline{e}$. The difficulty is to decide what fair sellers will do when $e^*_i < \underline{e}$. For the fair sellers still to be relevant, 
+
+\begin{align*}
+\underline{e} \leq \frac{\sqrt{8CP_i + S^2} - S}{2C} \\
+\frac{(2C \underline{e} + S)^2 - S^2}{8C} \leq P_i \\
+\frac{\underline{e}}{2} (C \underline{e} + S) \leq P_i
+\end{align*}
+
+Absolute maximum
+
+\begin{align*}
+\frac{(2C \underline{e} + S)^2 - S^2}{8C} &\leq \frac{3S^2}{8C} \\
+(2C \underline{e} + S)^2 &\leq 4 S^2 \\
+2C \underline{e} &\leq S \\
+\underline{e} &\leq \frac{S}{2C} \\
+\end{align*}
+
+The general idea is that with lower trust, the control system is more likely to wipe out the effect of the fair sellers and trust. 
+
+The question than is whether it makes sense to have a contract with some but not the perfect control system to still extract some of the benefit of the fair sellers. 
 
 \section{Seller competition}
 
